@@ -1,0 +1,27 @@
+<h1>Bad Entity Table</h1>
+
+<p>
+  This component is hardly usable; just try entering a different number.
+  Each time a population value is changed, the whole view model is updated,
+  the whole table is updated, and consequently the input component looses
+  focus.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items$ | async">
+      <td>{{ item.name }}</td>
+      <td>
+        <input class="number" [ngModel]="item.population" (ngModelChange)="updatePopulation(item, $event)"
+          type="number">
+      </td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
