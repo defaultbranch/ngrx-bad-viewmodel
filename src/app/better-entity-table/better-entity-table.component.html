@@ -1,0 +1,32 @@
+<h1>Better Entity Table</h1>
+
+<p>
+  The table in this component seems usable.
+</p>
+
+<p>
+  It uses one NgRx selector to pull all data keys from the NgRx store,
+  and then one selector per row. When a record is changed, the keys
+  remain unaltered, only the selector of the affected row is refreshed.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let key of keys$ | async">
+      <ng-container *ngIf="city$(key) | async as item">
+        <td>{{ item.name }}</td>
+        <td>
+          <input class="number" [ngModel]="item.population" (ngModelChange)="updatePopulation(item, $event)"
+            type="number">
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>

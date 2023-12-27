@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { CitiesNgrxModule, allCities, upsertCity } from '../cities.ngrx';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { City } from '../city';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+
+import { CitiesNgrxModule, allCities, upsertCity } from '../cities.ngrx';
 
 type VM = {
   name: string,

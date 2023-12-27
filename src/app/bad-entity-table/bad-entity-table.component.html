@@ -1,11 +1,22 @@
 <h1>Bad Entity Table</h1>
 
 <p>
-  This component is hardly usable; just try entering a different number.
-  Each time a population value is changed, the whole view model is updated,
-  the whole table is updated, and consequently the input component looses
-  focus.
+  The table in this component is hardly usable.
 </p>
+
+<p>
+  It uses one NgRx selector to pull all data rows
+  into an array at once. If one row changes, the whole
+  selection is invalidated and renewed.
+</p>
+
+<p>
+  Try entering a different population value:
+  Each time a population value is changed, the whole table is updated,
+  and consequently the input field focus is lost.
+</p>
+
+
 
 <table>
   <thead>

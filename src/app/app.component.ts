@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { BadEntityTableComponent } from './bad-entity-table/bad-entity-table.component';
-import { CitiesNgrxModule, upsertCity } from './cities.ngrx';
 import { Store } from '@ngrx/store';
+
+import { CitiesNgrxModule, upsertCity } from './cities.ngrx';
+import { BadEntityTableComponent } from './bad-entity-table/bad-entity-table.component';
+import { BetterEntityTableComponent } from './better-entity-table/better-entity-table.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,7 @@ import { Store } from '@ngrx/store';
   imports: [
     CitiesNgrxModule,
     BadEntityTableComponent,
+    BetterEntityTableComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

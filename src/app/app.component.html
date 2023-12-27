@@ -1,1 +1,18 @@
+<p>
+  Here we compare table implementations backed by NgRx, with different selection approaches.
+</p>
+
 <app-bad-entity-table></app-bad-entity-table>
+<app-better-entity-table></app-better-entity-table>
+
+<h1>Conclusion</h1>
+
+<p>
+  I think this is a problem of Angular change detecion in tables: If a table is rebuilt as a whole,
+  change detection gives up and refreshes more of the DOM than necessary.
+</p>
+
+<p>
+  Using a stable selector at &lt;tr&gt; and specific selectors for the fields within simplifies
+  the change detection and refreshes only the modified parts of the DOM.
+</p>
