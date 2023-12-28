@@ -20,14 +20,14 @@ import { City } from '../city';
 })
 export class BetterEntityTableComponent {
 
-  keys$: Observable<unknown[]>;
+  keys$: Observable<string[]>;
 
   constructor(private store: Store) {
     this.keys$ = store.select(allCityNames);
   }
 
-  city$(key: unknown) {
-    return this.store.select(city(`${key}`));
+  city$(key: string) {
+    return this.store.select(city(key));
   }
 
   updatePopulation(item: City, population: number) {

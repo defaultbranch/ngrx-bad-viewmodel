@@ -46,7 +46,8 @@ const {
   selectAll,
 } = adapter.getSelectors();
 
-export const allCityNames = createSelector(selectFeature, selectIds);
+const allKeys = createSelector(selectFeature, selectIds);
+export const allCityNames = createSelector(allKeys, keys => keys.filter((key): key is string => true));
 export const allCities = createSelector(selectFeature, selectAll);
 export const city = (name: string) => createSelector(selectFeature, (feature) => feature.entities[name]);
 
